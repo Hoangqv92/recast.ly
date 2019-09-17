@@ -11,6 +11,7 @@
     "babel": "babel -w . --out-dir compiled --presets=react --ignore=node_modules,compiled --source-maps inline"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "bootstrap": "^4.0.0-alpha.2",
     "jquery": "^2.2.1",
     "lodash": "^4.6.1",
