@@ -6,6 +6,13 @@ import exampleVideoData from '../data/exampleVideoData.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      currentVideo: exampleVideoData[0]
+    };
+  }
+
+  changeCurrentVideo(video) {
+    this.setState({currentVideo: video});
   }
 
 
@@ -19,10 +26,10 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={exampleVideoData[0]}/>
+            <VideoPlayer video={this.state.currentVideo}/>
           </div>
           <div className="col-md-5">
-            <VideoList videos={exampleVideoData}/>
+            <VideoList videos={exampleVideoData} changeCurrentVideo={this.changeCurrentVideo.bind(this)}/>
           </div>
         </div>
       </div>
