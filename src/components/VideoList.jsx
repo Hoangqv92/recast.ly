@@ -1,10 +1,9 @@
-var VideoList = () => (
+import VideoListEntry from './videoListEntry.js';
+
+var VideoList = (props) => (
   <div className="video-list">
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    {props.videos.map((video, key) =>
+      <VideoListEntry video={video} key={video.etag} changeCurrentVideo={props.changeCurrentVideo}/>)}
   </div>
 );
 
